@@ -1,0 +1,193 @@
+<html>
+    <head>
+     <link  type="text/css" rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div id="body_calculator">
+            
+            <div id="calculator">
+                <form name="form" style="width: 100%; ">
+                <input id="inp1" class="textview" name="textview" style="width: 100%; height: 40px; background: #e3edf7; border:none ; ">
+            </form>
+                <div id="col"><button class="btn" id="clear" >AC</button></div>
+                <div id="col"> <button class="btn" id="pos_neg" >+/-</button></div>
+                <div id="col"><button class="btn"id="percent" >%</button></div>
+                <div id="col"> <button class="btn" id="divide">/</button></div>
+                <div id="col"><button class="btn" id="seven" >7</button></div>
+                <div id="col"><button class="btn" id="eight" >8</button></div>
+                <div id="col"><button class="btn" id="nine">9</button></div>
+                <div id="col"><button class="btn" id="mul" >*</button></div>
+                <div id="col"><button class="btn" id="four" >4</button></div>
+                <div id="col"><button class="btn" id="five">5</button></div>
+                <div id="col"><button class="btn" id="six" >6</button></div>
+                <div id="col"><button class="btn" id="sub" >-</button></div>
+                <div id="col"><button class="btn" id="one" >1</button></div>
+                <div id="col"><button class="btn" id="two">2</button></div>
+                <div id="col"><button class="btn" id="three">3</button></div>
+                <div id="col"><button class="btn" id="sum">+</button></div>
+                <div id="col" ><button class="btn" id="zero"  >0</button></div>
+                <div id="col"><button class="btn" id="ashar" >.</button></div>
+                <div id="col" ><button class="btn" id="equal" >=</button></div>
+                
+
+            </div>
+        </div>
+     <script>
+
+    var a,b,c,op;
+    
+    var inp1=document.getElementById("inp1");
+
+    var btn_equal=document.getElementById("equal");
+      var zero=document.getElementById("zero");  
+      
+      zero.onclick=function(){
+          inp1.value+=0;
+
+      }     
+      var one=document.getElementById("one");  
+      
+      one.onclick=function(){
+          inp1.value+=1;
+
+      }    
+      var two=document.getElementById("two");  
+      
+      two.onclick=function(){
+          inp1.value+=2;
+
+      }   
+      var three=document.getElementById("three");  
+      
+      three.onclick=function(){
+          inp1.value+=3;
+
+      }   
+      var four=document.getElementById("four");  
+      
+      four.onclick=function(){
+          inp1.value+=4;
+
+      }   
+
+      var five=document.getElementById("five");  
+      
+      five.onclick=function(){
+          inp1.value+=5;
+
+      }   
+      var six=document.getElementById("six");  
+      
+      six.onclick=function(){
+          inp1.value+=6;
+
+      }  
+      var seven=document.getElementById("seven");  
+      
+      seven.onclick=function(){
+          inp1.value+=7;
+
+      }  
+      var eight=document.getElementById("eight");  
+      
+      eight.onclick=function(){
+          inp1.value+=8;
+
+      }  
+      var nine=document.getElementById("nine");  
+      
+      nine.onclick=function(){
+          inp1.value+=9;
+
+      }  
+               
+     var btn_clear=document.getElementById("clear");
+      btn_clear.onclick=function(){
+          inp1.value=" ";
+
+      }
+      var btn_percent=document.getElementById("percent");
+      btn_percent.onclick=function(){
+          form.inp1.value+="%";
+          op="per";
+      }
+      var btn_mul=document.getElementById("mul");
+      btn_mul.onclick=function(){
+        a= parseInt(inp1.value);
+        inp1.value=" "; 
+        op="mul";
+         
+      }
+      var btn_sum=document.getElementById("sum");
+      btn_sum.onclick=function(){
+        a= parseInt(inp1.value);
+        inp1.value="";
+        
+        
+        op="sum";
+        
+      }
+          
+      var btn_sub=document.getElementById("sub");
+      btn_sub.onclick=function (){
+        a= parseInt(inp1.value);
+        inp1.value=" "; 
+        op="sub";
+          
+      }
+      var btn_divide=document.getElementById("divide");
+      btn_divide.onclick=function(){
+          form.inp1.value+="/";
+          op="div";
+      }
+      var ashar=document.getElementById("ashar");
+      ashar.onclick=function(){
+          form.inp1.value+=".";
+      }
+      
+     equal.onclick=function(){
+        if(op=="sum"){
+            b= parseInt(inp1.value);
+             c=a+b;
+        
+               inp1.value=c;
+        }
+        else if(op=="sub"){
+            b= parseInt(inp1.value);
+             c=a-b;
+        
+               inp1.value=c;
+        }
+        else if(op=="mul"){
+            b= parseInt(inp1.value);
+             c=a*b;
+        
+               inp1.value=c;
+
+              }
+         if(op=="div" | op=="per")  {
+            
+             inp1.value=eval(inp1.value);
+         }   
+
+            }
+    var pos_neg=document.getElementById("pos_neg");
+      pos_neg.onclick=function(){
+          if(inp1.value>0){
+              inp1.value *=-1;
+          }
+          else if(inp1.value<0){
+            inp1.value *=-1;
+          }
+      }
+
+
+     </script>
+
+
+
+
+
+    </body>
+</html>
